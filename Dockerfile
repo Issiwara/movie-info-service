@@ -5,6 +5,6 @@ RUN mvn clean package
 
 FROM openjdk:19-jdk-alpine3.15 as production
 EXPOSE 3002:3002
-COPY --from=build /home/app/target/movie-info-service.jar /opt/app/movie-info-service.jar
-WORKDIR /opt/app
+COPY --from=build /home/app/target/movie-info-service.jar /opt/service/movie-info-service.jar
+WORKDIR /opt/service
 ENTRYPOINT ["java","-jar","movie-info-service.jar"]
