@@ -31,4 +31,5 @@ jobs:
             sudo docker pull issiwara/movie-info-service
             sudo docker stop movie-info-service
             sudo docker rm movie-info-service
+            
             sudo docker run -d -p 3002:3002 --name movie-info-service issiwara/movie-info-service
